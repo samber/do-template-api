@@ -15,10 +15,10 @@ import (
 // HTTPServer represents the HTTP server service
 // This demonstrates how to create an HTTP server with dependency injection using do.
 type HTTPServer struct {
-	config        *config.Config `do:""`
-	logger        zerolog.Logger `do:""`
-	userHandler   *UserHandler   `do:""`
-	healthHandler *HealthHandler `do:""`
+	config        *config.Config  `do:""`
+	logger        *zerolog.Logger `do:""`
+	userHandler   *UserHandler    `do:""`
+	healthHandler *HealthHandler  `do:""`
 	server        *http.Server
 	engine        *gin.Engine
 }
