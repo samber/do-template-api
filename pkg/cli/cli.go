@@ -79,7 +79,7 @@ func (cli *CLI) newServeCommand() *cobra.Command {
 			// Get the HTTP server from the dependency injection container
 			// This demonstrates how to access services from the CLI using do
 			server := do.MustInvoke[*httpservice.HTTPServer](cli.injector)
-			logger := do.MustInvoke[zerolog.Logger](cli.injector)
+			logger := do.MustInvoke[*zerolog.Logger](cli.injector)
 
 			// Setup graceful shutdown
 			_, cancel := context.WithCancel(context.Background())
